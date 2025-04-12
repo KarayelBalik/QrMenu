@@ -1,0 +1,158 @@
+/* Temel reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Sorts Mill Goudy';
+  font-weight: 700;
+  background-color: #F1EFEC;
+  color: #333;
+  padding: 1rem;
+}
+
+/* Başlık */
+header h1 {
+  font-family: 'Cabin', sans-serif;
+  font-weight: 700;
+  font-size: 3rem;
+  font-weight: bold;
+  color: #2c3e50;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: all 0.3s ease;
+}
+h1:hover {
+  color: #123458;
+  transform: scale(1.1);
+}
+
+/* Menü kategorileri */
+.menu-categories ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0;
+  margin-bottom: 1.5rem;
+}
+
+.menu-categories li {
+  
+  width: auto;
+}
+
+.menu-categories li button {
+  background-color: #123458;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Cabin', sans-serif;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+  text-align: center;
+}
+
+.menu-categories li button:hover {
+  background-color: #123458f3;
+}
+
+/* Menü bölümleri */
+.menu-section {
+  margin-bottom: 2rem;
+  position: relative; /* Menü altındaki içerik kaymasını sağlamak için */
+  transition: all 0.3s ease;
+}
+
+.menu-section h2 {
+  color: #123458;
+  border-bottom: 2px solid #123458;
+  padding-bottom: 0.1rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Menü içeriği (başta gizli) */
+.menu-items {
+  display: none;
+  margin-top: 1rem;
+  position: absolute; /* Altında kayan menü için konumlandırma */
+  top: 100%; /* Butonun hemen altına yerleşmesi için */
+  left: 0;
+  width: 100%;
+}
+
+.menu-section.active .menu-items {
+  display: block;
+}
+
+/* Menü kartları */
+.menu-item {
+  background-color: white;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  transition: transform 0.2s;
+  display: flex;
+  flex-direction: column; /* Dikey hizalama */
+  align-items: flex-start; /* Sola hizalama */
+  width: 100%;
+}
+
+.menu-item:hover {
+  transform: scale(1.03);
+}
+
+.menu-item h3 {
+  color: #333;
+  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: space-between; /* Fiyatı sağa hizalamak için */
+  align-items: center;
+  width: 100%;
+}
+.menu-item .price {
+  font-family: 'Sorts Mill Goudy';
+  margin-left: auto; /* Fiyatı sağa dayalı yap */
+  color: #123458; /* Fiyatın rengini değiştirebilirsin */
+}
+.menu-item .weight {
+  font-family: 'Cabin', sans-serif;
+  font-size: 0.6rem; /* Gramajı biraz küçültüyoruz */
+  color: #666;
+  margin-top: 0rem;
+}
+
+.menu-item p {
+  margin: 0;
+  text-align: left;
+}
+
+/* Responsive: Mobil uyumlu tasarım */
+@media (max-width: 768px) {
+  .menu-categories ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .menu-categories li button {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+  }
+
+  .menu-item {
+    width: 100%;
+    padding: 1.5rem;
+  }
+
+  .menu-section h2 {
+    font-size: 2rem;
+  }
+}
